@@ -4,7 +4,7 @@ router = APIRouter()
 
 
 @router.get("/get/{project_id}")
-async def get_project():
+def get_project():
     return ''
 
 
