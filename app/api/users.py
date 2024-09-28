@@ -4,7 +4,7 @@ from app.schemas.input.user import UserCreate
 from app.schemas.output.user import UserOut
 from app.services.user_service import UserService
 from app.models.user import users_db
-from app.core.security import create_access_token, verify_password
+from app.core.security import create_access_token, verify_password, get_current_user
 
 router = APIRouter()
 
@@ -36,3 +36,10 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends()):
 @router.get("/users")
 async def users():
     return users_db
+
+# Эндпоинт для проверки, залогинен ли пользователь
+@router.get("/me")
+async def get_me(current_user: str = Depends(get_current_user)):
+    return {"logged_in": True, "username": current_user}
+
+# Если пользователь не залогинен, FastAPI автоматически вернет 401 ошибку
