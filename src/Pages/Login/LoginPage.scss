@@ -1,0 +1,104 @@
+//body{
+//  margin: 0;
+//  padding: 0;
+//}
+//
+//.inter-text{
+//  font-family: Inter, sans-serif;
+//}
+//
+//.body{
+//  display: flex;
+//}
+//
+//.container{
+//  display: flex;
+//  flex-direction: column;
+//  align-items: start;
+//}
+//
+//#rememberMe{
+//  display: flex;
+//  flex-direction: row;
+//  width: 100%;
+//  height: auto;
+//  align-items: center;
+//  justify-content: space-between;
+//}
+//
+//.rememberElements{
+//  margin: 0;
+//  border: none;
+//  background: none;
+//  padding: 0;
+//  height: 16px;
+//  font-size: 11px;
+//}
+//
+//.left-side{
+//  display: flex;
+//  align-items: center;
+//}
+//
+//h1, h4{
+//  margin: 0;
+//  padding: 0;
+//}
+//
+//#loginWarning{
+//  color: #999999;
+//  margin-bottom: 30px;
+//}
+//
+//input[type = email],[type=password] {
+//  border: 1px solid #ADADAD;
+//  background-color: #F5F5F5;
+//  border-radius: 12px;
+//  height: 35px;
+//  width: 400px;
+//  padding-left: 20px;
+//  margin-top: 5px;
+//  margin-bottom: 20px;
+//}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.inter-text {
+  font-family: Inter, sans-serif;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  border-radius: 10px;
+  border: 2px solid #ADADAD;
+  background-color: #F5F5F5;
+  height: 50vh;
+  width: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#gitlabLoginButton {
+  background-color: #000000; /* GitLab's brand color */
+  color: #c1bbbb;
+  border: none;
+  border-radius: 12px;
+  height: 40px;
+  width: 200px;
+  font-size: 16px;
+  margin-top: 80px;
+  cursor: pointer;
+}
+
+#gitlabLoginButton:hover {
+  background-color: #292727; /* Darken on hover */
+}
