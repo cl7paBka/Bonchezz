@@ -8,6 +8,7 @@ from typing import List
 class Base(DeclarativeBase):
     pass
 
+
 class User(Base):
     __tablename__ = 'Users'
 

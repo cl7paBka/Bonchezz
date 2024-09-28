@@ -1,17 +1,20 @@
 from fastapi import FastAPI
 from app.api import projects, tasks, users
 import uvicorn
-from db import engine, Base
+from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
+from app.core.config import DATABASE_URL
+from app.models.user import Base
+import db
 from contextlib import asynccontextmanager
 
 
 # from app.core.config import settings
 @asynccontextmanager
 async def startup(app: FastAPI):
-    async with engine.begin() as conn:
+    async with db.engine.begin() as conn:
         await conn.run_sync(Base.metadata.drop_all)
         await conn.run_sync(Base.metadata.create_all)
-        yield
+    yield
 
 
 # Создание экземпляра приложения FastAPI
